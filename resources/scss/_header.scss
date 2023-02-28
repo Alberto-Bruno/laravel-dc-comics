@@ -1,0 +1,59 @@
+.logo {
+    width: 90px;
+    margin-left: 150px;
+}
+
+.info-header {
+    background-color: $color-blue;
+    color: white;
+    text-align: end;
+}
+
+header {
+    height: 150px;
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    nav {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        ul {
+            height: 100%;
+            margin: 2rem 1rem;
+            display: flex;
+            align-items: center;
+
+            li {
+                height: 100%;
+                padding: 1rem;
+                font-size: 12px;
+                font-family: $main-font;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+
+                &.active {
+                    border-bottom: $border-bottom;
+
+                    a {
+                        color: $color-blue;
+                    }
+                }
+
+                &:hover {
+                    border-bottom: $border-bottom;
+                }
+
+                a:hover {
+                    color: $color-blue;
+                }
+            }
+        }
+
+    }
+
+}
