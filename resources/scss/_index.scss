@@ -1,0 +1,109 @@
+.main-comics-top {
+    min-height: 100px;
+    background-color: black;
+    color: white;
+    padding-bottom: 20px;
+
+    .bg-black {
+        background-color: black;
+        padding: 60px 0;
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            justify-content: center;
+
+            .btn-top {
+                width: 100%;
+                position: relative;
+                top: -30px;
+                left: 0;
+                right: 0;
+
+                button {
+                    padding: 15px 30px;
+                    border: 1px solid white;
+                    background-color: #0382F9;
+                    color: white;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
+
+            .btn-bottom {
+                button {
+                    padding: 15px 30px;
+                    border: 1px solid white;
+                    background-color: #0382F9;
+                    color: white;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+
+        .comics-series-card {
+            flex-basis: calc(100% / 6);
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: inset 1px 0 5px white;
+            }
+
+            img {
+                display: block;
+                height: 140px;
+                width: 100%;
+            }
+
+            h6 {
+                text-transform: uppercase;
+                padding-top: 10px;
+            }
+        }
+    }
+
+}
+
+.main-comics-bottom {
+    min-height: 120px;
+    background-color: #0c7cec;
+    display: flex;
+    align-items: center;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis: calc(100% / 5);
+
+        img {
+            width: 100px;
+            padding-right: 18px;
+        }
+
+        span {
+            color: white;
+            font-size: 13px;
+
+            &:hover {
+                text-shadow: 1px 0 10px white;
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ComicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/characters', [PageController::class, 'characters'])->name('characters');
-Route::get('/comics', [PageController::class, 'comics'])->name('comics');
+
+Route::get('/comics', [ComicController::class, 'index'])->name('comics');
+Route::get('/comics/create', [ComicController::class, 'create'])->name('comics.create');
+Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
+Route::post('/comics', [ComicController::class, 'store'])->name('comics.store');
+
 Route::get('/movies', [PageController::class, 'movies'])->name('movies');
 Route::get('/tv', [PageController::class, 'tv'])->name('tv');
 Route::get('/games', [PageController::class, 'games'])->name('games');
