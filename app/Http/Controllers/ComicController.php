@@ -30,6 +30,40 @@ class ComicController extends Controller
     }
 
 
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'description' => 'nullable|string',
+            'thumb' => 'nullable|url',
+            'price' => 'string',
+            'series' => 'required|string',
+            'sale_date' => 'string',
+            'type' => 'string',
+            'artists' => 'nullable|string',
+            'writers' => 'nullable|string',
+        ]);
+
+        $data = $request->all();
+        $comic = new Comic();
+        $comic->title = $data['title'];
+        $comic->description = $data['description'];
+        $comic->thumb = $data['thumb'];
+        $comic->price = $data['price'];
+        $comic->series = $data['series'];
+        $comic->sale_date = $data['sale_date'];
+        $comic->type = $data['type'];
+        $comic->artists = $data['artists'];
+        $comic->writers = $data['writers'];
+        $comic->save();
+        return to_route('comics.show', $comic->id);
+    }
+
+
     /**
      * Display the specified resource.
      */
