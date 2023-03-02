@@ -1,0 +1,210 @@
+.main-show-top {
+    height: 80px;
+    background-color: $color-blue;
+
+    .main-top-container {
+        padding: 0 55px;
+
+        .a-button {
+            border: 1px solid white;
+            border-radius: 5px;
+            color: white;
+            position: relative;
+            bottom: 200px;
+            left: 80%;
+            padding: 5px 10px;
+        }
+
+        .main-top-card {
+            position: relative;
+            bottom: 200px;
+            display: inline-block;
+
+            img {
+                height: 250px;
+            }
+
+            .label-top,
+            .label-bottom {
+                position: absolute;
+                color: white;
+                left: 2px;
+                padding: 2px 5px;
+                font-size: 14px;
+            }
+
+            .label-top {
+                top: 2px;
+                text-transform: uppercase;
+            }
+
+            .label-bottom {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.main-show-center {
+
+
+    .main-center-container {
+        padding: 60px 55px;
+
+        .main-center-elements {
+            display: flex;
+
+            .elements-text {
+                width: 70%;
+
+                h1 {
+                    text-transform: uppercase;
+                    color: $color-blue;
+                    margin-bottom: 15px;
+                }
+
+                .row-price {
+                    width: 100%;
+                    display: flex;
+
+                    .row-price-general {
+                        display: flex;
+                        align-items: center;
+                        height: 50px;
+                        padding: 0 20px;
+                        background-color: green;
+                    }
+
+                    .row-price-left {
+                        width: 60%;
+                        justify-content: space-between;
+                        border-right: 2px solid white;
+                    }
+
+                    .row-price-right {
+                        justify-content: center;
+                        width: 35%;
+                        cursor: pointer;
+                    }
+
+                    .light-green {
+                        color: lightgreen;
+                    }
+
+                    .color-white {
+                        color: white;
+                    }
+                }
+
+                .description-container {
+                    width: 95%;
+                    padding: 15px 0;
+
+                    p {
+                        font-size: 14px;
+                        font-weight: bold;
+                        color: lightgrey;
+                    }
+                }
+            }
+
+            .elements-img {
+                width: 30%;
+
+                .elements-img-text {
+                    font-size: 14px;
+                    color: grey;
+                    font-weight: bold;
+                    position: relative;
+                    bottom: 25px;
+                    left: 58%;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+.main-show-bottom {
+    background-color: $color-blue;
+
+    .main-bottom-container {
+        padding: 35px 55px;
+        margin-bottom: 70px;
+        display: flex;
+        justify-content: space-between;
+
+        .talents,
+        .specs {
+            width: 45%;
+
+            .talents-title,
+            .specs-title {
+                color: white;
+                padding-bottom: 20px;
+            }
+
+            .talents-content,
+            .specs-content {
+                display: flex;
+                padding: 10px 0;
+                border-bottom: 1px solid white;
+            }
+
+            .name-paragraph {
+                width: 30%;
+                color: white;
+                font-size: 13px;
+            }
+
+            .content-paragraph {
+                width: 70%;
+                font-size: 13px;
+                color: white;
+            }
+
+            .text-uppercase {
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            .color-grey {
+                color: lightgrey;
+            }
+        }
+    }
+
+    .main-bottom-images {
+        display: flex;
+        height: 80px;
+
+        .d-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .main-bottom-images-content {
+            width: calc(100% / 6);
+            height: 100%;
+            padding: 0 20px;
+
+            .text {
+                font-size: 13px;
+                font-weight: bold;
+                color: white;
+            }
+
+            img {
+                background-color: $color-blue;
+                height: 70%;
+            }
+        }
+
+    }
+}
