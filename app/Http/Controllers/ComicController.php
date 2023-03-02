@@ -26,10 +26,10 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('comics.create');
+        $comic = new Comic();
+
+        return view('comics.create', compact('comic'));
     }
-
-
 
     /**
      * Store a newly created resource in storage.
@@ -49,7 +49,9 @@ class ComicController extends Controller
         ]);
 
         $data = $request->all();
+
         $comic = new Comic();
+
         $comic->title = $data['title'];
         $comic->description = $data['description'];
         $comic->thumb = $data['thumb'];
@@ -59,10 +61,13 @@ class ComicController extends Controller
         $comic->type = $data['type'];
         $comic->artists = $data['artists'];
         $comic->writers = $data['writers'];
-        $comic->save();
-        return to_route('comics.show', $comic->id);
-    }
 
+        $comic->save();
+
+        return to_route('comics.show', $comic->id)
+            ->with('type', 'success')
+            ->with('message', "'$comic->series' created successfully");
+    }
 
     /**
      * Display the specified resource.
@@ -76,24 +81,55 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+
+        $request->validate([
+            'title' => 'required|string',
+            'description' => 'nullable|string',
+            'thumb' => 'nullable|url',
+            'price' => 'string',
+            'series' => 'required|string',
+            'sale_date' => 'string',
+            'type' => 'string',
+            'artists' => 'nullable|string',
+            'writers' => 'nullable|string',
+        ]);
+
+        $comic->title = $data['title'];
+        $comic->description = $data['description'];
+        $comic->thumb = $data['thumb'];
+        $comic->price = $data['price'];
+        $comic->series = $data['series'];
+        $comic->sale_date = $data['sale_date'];
+        $comic->type = $data['type'];
+        $comic->artists = $data['artists'];
+        $comic->writers = $data['writers'];
+
+        $comic->save();
+
+        return to_route('comics.show', $comic->id)
+            ->with('type', 'success')
+            ->with('message', "'$comic->series' has been successfully edited");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return to_route('comics.index')
+            ->with('message', "'$comic->series' has been successfully removed")
+            ->with('type', 'success');
     }
 }
