@@ -20,6 +20,12 @@
                             </div>
                         @endforeach
                     </div>
+                    <form action="{{ route('comics.destroy', $comic->id) }}" method="POST" class="delete-forms"
+                        data-name="{{ $comic->series }}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="a-button-delete">Delete Comic</button>
+                    </form>
                     <div class="btn-bottom">
                         <button>Load More</button>
                     </div>
